@@ -4,67 +4,413 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tatu Laras</title>
-        <link rel="stylesheet" href="res/style.css" />
+        <link rel="stylesheet" href="res/css/style.css" />
     </head>
     <body>
+        <div id="screenspace">
+            <div id="floating-window" class="window">
+                <div class="header">
+                    <div class="start">
+                        <img draggable="false"
+                            src="res/img/icons/msg_information-2.png"
+                            class="icon pixelated"
+                        />
+                        <span class="title">Info</span>
+                    </div>
+                    <div class="button">X</div>
+                </div>
+                <div class="body">
+                    <div class="text">
+                        Löytyy n. 6 vuotta kokemusta ohjelmoinnin saralta,
+                        joista n. 1.5 on työkokemusta. Kokemusta on kertynyt
+                        enimmäkseen web-kehityksen piiristä, mutta mukaan on
+                        mahtunut myös mobiilikehitystä, pelikehitystä ja
+                        VR-kehitystä. Parhaiten hallussa olevat
+                        ohjelmointikielet ovat JavaScript, PHP, SQL, C# ja C++.
+                    </div>
+                </div>
+            </div>
+            <div id="taskbar" class="hide">
+                <div id="start-button" class="border">
+                    <img draggable="false"
+                        src="res/img/icons/windows-0.png"
+                        class="icon pixelated"
+                    />
+                    <span class="text">Start</span>
+                </div>
+                <div class="section divider">
+                    <div class="start-border"></div>
+                    <div class="dimple"></div>
+                </div>
+                <div class="section taskmanager">
+                    <div class="start-border"></div>
+                    <div class="dimple"></div>
+                    <div class="items">
+                        <a class="item tm-1" href="#task-1">
+                            <img draggable="false"
+                                src="res/img/icons/application_hammer_grouppol-1.png"
+                                class="icon pixelated"
+                            />
+                            <span class="text">Kielet ja teknologiat</span>
+                        </a>
+                        <a class="item tm-2" href="#task-2">
+                            <img draggable="false"
+                                src="res/img/icons/file_eye.png"
+                                class="icon pixelated"
+                            />
+                            <span class="text">Työkokemus</span>
+                        </a>
+                        <a class="item tm-6" href="#task-3">
+                            <img draggable="false"
+                                src="res/img/icons/fax_machine-0.png"
+                                class="icon pixelated"
+                            />
+                            <span class="text">Yhteystiedot</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="section system-drawer">
+                    <div class="start-border"></div>
+                    <div class="drawer">
+                        <img draggable="false"
+                            src="res/img/icons/clock-0.png"
+                            class="icon pixelated"
+                        />
+                        <img draggable="false"
+                            src="res/img/icons/cd_drive_purple-4.png"
+                            class="icon pixelated"
+                        />
+                        <div id="time"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="wrapper">
+            <div class="bg"></div>
             <div id="main-lander">
                 <div class="left">
                     <div class="images">
-
-                        <img
-                        src="res/img/globe.gif"
-                        width="300"
-                        class="pixelated globe"
-                        />
-                        
-                        <img
-                        src="res/img/statue.gif"
-                        width="200"
-                        class="pixelated"
+                        <img draggable="false"
+                            src="res/img/globe_rt.gif"
+                            width="300"
+                            class="pixelated globe"
                         />
 
+                        <img draggable="false"
+                            src="res/img/statue_rt.gif"
+                            width="200"
+                            class="pixelated"
+                        />
                     </div>
 
                     <div class="window disabled info1">
                         <div class="header">
                             <div class="start">
-                                <img
+                                <img draggable="false"
                                     src="res/img/icons/msg_information-2.png"
-                                    draggable="false"
-                                    class="icon"
+                                    class="icon pixelated"
                                 />
                                 <span class="title">Info</span>
                             </div>
                             <div class="button">X</div>
                         </div>
                         <div class="body">
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent diam orci, hendrerit quis dui eget, posuere congue neque. Nunc convallis dolor sed ante ultricies egestas. Fusce urna purus, ultricies sit amet velit nec, tincidunt interdum quam. Proin efficitur consequat justo eget gravida. Maecenas luctus ut tortor at lacinia. Morbi interdum nisi in libero dictum, nec posuere sem porta. Duis at justo et mi suscipit interdum. Cras sodales dolor nec urna molestie volutpat.</div>
+                            <div class="text">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Praesent diam orci, hendrerit
+                                quis dui eget, posuere congue neque. Nunc
+                                convallis dolor sed ante ultricies egestas.
+                                Fusce urna purus, ultricies sit amet velit nec,
+                                tincidunt interdum quam. Proin efficitur
+                                consequat justo eget gravida. Maecenas luctus ut
+                                tortor at lacinia. Morbi interdum nisi in libero
+                                dictum, nec posuere sem porta. Duis at justo et
+                                mi suscipit interdum. Cras sodales dolor nec
+                                urna molestie volutpat.
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="right">
-                    <h1>タト・ララス<br />TATU LARAS</h1>
-                    
+                    <h1>タトゥ・ララス<br />TATU LARAS</h1>
+
                     <div class="window info2">
                         <div class="header">
                             <div class="start">
-                                <img
-                                    src="res/img/icons/msg_information-2.png"
-                                    draggable="false"
-                                    class="icon"
+                                <img draggable="false"
+                                    src="res/img/icons/utopia_smiley.png"
+                                    class="icon pixelated"
                                 />
-                                <span class="title">Info</span>
+                                <span class="title">Hmm...</span>
                             </div>
                             <div class="button">X</div>
                         </div>
                         <div class="body">
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+                            <div class="text">Lue alhaalta lisää!</div>
+                            <button class="ok" id="scroll-button">
+                                <span class="button-text">OK</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div id="showcase-scrollable-region">
+                <div class="part1 part">
+                    <div class="larger"></div>
+                    <div class="smaller" id="task-1">
+                        <img draggable="false" src="res/img/wordart.png" class="wordart" />
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="text">HTML, CSS, JavaScript, React</div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="text">PHP, Node.js</div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="text">
+                                SQL-tietokannat, MySQL, SQL Server
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="text">
+                                C#, .NET, ASP.NET, Unity Game Engine
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="text">
+                                Visual Basic .NET, Windows Forms
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="text">C++, Dear ImGui, Qt</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="part2 part">
+                    <div class="smaller" id="task-2">
+                        <img draggable="false" src="res/img/työkokemus.png" class="wordart" />
+                        <div class="list-item job">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="content">
+                                <div class="title">
+                                    <div class="company">
+                                        Simulaattorisektori, puolustusvoimat
+                                    </div>
+                                    <div class="position">Pääohjelmoija</div>
+                                </div>
+                                <div class="time-period">
+                                    Helmikuu 2023 - Syyskuu 2023
+                                    (Varusmiespalvelus)
+                                </div>
+                                <div class="short-desc">
+                                    Suoritin varusmiespalvelukseni VKY:n eli
+                                    virtuaalikoulutusyksikön pääohjelmoijana.
+                                    VKY:n ohjelmoijan tehtäviin kuuluu yleisesti
+                                    lisäosien kehittäminen VBS4:lle,
+                                    puolustusvoimien käyttämälle
+                                    simulaattorikokonaisuudelle, jonka lisäksi
+                                    olin vastuussa VR/XR simulaattorien
+                                    softapuolen kehittämisestä. Teknologioina
+                                    käytössä on ollut Unity-pelimoottori (C#),
+                                    C++ ja VBS4:n omat kehitystyökalut.
+                                    Palveluksen loppupuolella olin vastuussa
+                                    kaikkien uuden saapumiserän n. 30
+                                    ohjelmoijan kouluttamisesta
+                                    valtakunnallisesti, sekä suurimman osan
+                                    palveluksesta olin n. 30 muun ohjelmoijan
+                                    tekninen tuki ja koordinoija.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item job">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="content">
+                                <div class="title">
+                                    <div class="company">GoGolf Oyj</div>
+                                    <div class="position">Verkkokehittäjä</div>
+                                </div>
+                                <div class="time-period">
+                                    Huhtikuu 2022 - Joulukuu 2022 (Määräaikainen
+                                    sopimus)
+                                </div>
+                                <div class="short-desc">
+                                    Toimin enimmäkseen full-stack
+                                    -verkkokehittäjän roolissa työstäen
+                                    erinäisiä ratkaisuja liittyen yrityksen
+                                    tarpeisiin verkkokaupan, verkkokauppadatan
+                                    ja asiakkuudenhallinnan saralla. Keskitin
+                                    yrityksen datavirran luomalla
+                                    asiakashallintaan sekä verkkokauppaan
+                                    (GolfSky ja GoGolfin oma) liittyviin
+                                    datatarpeisiin integraatioalustan, jota
+                                    hyödyntää muun muassa yritykselle
+                                    web-teknologioilla kokonaisuudessaan
+                                    toteuttamani mobiiliappi.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item job">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="content">
+                                <div class="title">
+                                    <div class="company">
+                                        IT-Palvelu P Viiliäinen Oy
+                                    </div>
+                                    <div class="position">
+                                        Ohjelmistokehittäjä, kesätyö
+                                    </div>
+                                </div>
+                                <div class="time-period">
+                                    Kesäkuu 2020 - Heinäkuu 2020 ja Kesäkuu 2021
+                                    - Heinäkuu 2021 (Kesätyö)
+                                </div>
+                                <div class="short-desc">
+                                    Tein mobiilikehitystä käyttäen
+                                    Xamarin-kehystä, sekä työpöytäkehitystä
+                                    käyttäen teknologioita Visual Basic.NET ja
+                                    Windows Forms. Lisäksi tein verkkokehitystä
+                                    käyttäen ASP.NET Core -kehystä Razor pages
+                                    -templateiden kanssa.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item job">
+                            <img draggable="false" src="res/img/point_right.gif" />
+                            <div class="content">
+                                <div class="title">
+                                    <div class="company">SGN Group Oy</div>
+                                    <div class="position">
+                                        Verkkokehittäjä, kesätyö
+                                    </div>
+                                </div>
+                                <div class="time-period">
+                                    Kesäkuu 2019 - Heinäkuu 2019 ja Syyskuu 2018
+                                    (Kesätyö ja työharjoittelu)
+                                </div>
+                                <div class="short-desc">
+                                    Työstin data-integraatioita yrityksen
+                                    tarpeisiin, pääasiassa käyttäen PHP:tä ja
+                                    SQL:ää.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="larger"></div>
+                </div>
+                <div class="part part3">
+                    <img draggable="false"
+                        src="res/img/firmat/gogolf_nega_iso-300x62.png"
+                        width="300"
+                    />
+                    <div class="row">
+                        <div class="larger">
+                            <div class="explanation-content">
+                                <ul>
+                                    <li>
+                                        Olin alusta loppuun vastuussa
+                                        <a
+                                            href="https://play.google.com/store/apps/details?id=com.choicely.gogolf&hl=en_US"
+                                            >GoGolf -mobiiliapin</a
+                                        >
+                                        kehityksestä
+                                    </li>
+                                    <li>
+                                        Loin firmalle integraatioalustan ...
+                                    </li>
+                                    <li>Lorem impsum asdas das dasd as d</li>
+                                </ul>
+
+                                <div class="recommendation">
+                                    Suosittelija: Miikka T. Marttila, Group CIO
+                                </div>
+                            </div>
+                        </div>
+                        <div class="smaller">
+                            <img draggable="false"
+                                src="res/img/firmat/gogolfapp1.png"
+                                class="app-preview"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="part part4">
+                    <img draggable="false"
+                        src="res/img/firmat/Suomen_Puolustusvoimien_tornileijona.svg.png"
+                        width="100"
+                    />
+                    <div class="row">
+                        <div class="larger">
+                            <div class="explanation-content">
+                                <ul>
+                                    <li>
+                                        Olin alusta loppuun vastuussa
+                                        VR-simulaattorin kehityksestä
+                                    </li>
+                                    <li>Koulutin yms tms jne ...</li>
+                                    <li>Lorem impsum asdas das dasd as d</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="smaller">
+                            <img draggable="false"
+                                src="res/img/firmat/XR-3-varjo-header.png"
+                                class="app-preview"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="part part5">
+                    <div class="larger"></div>
+                    <div class="smaller" id="task-3">
+                        <img draggable="false" src="res/img/yhteystiedot.png" class="wordart" />
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/icons/mailbox_world-0.png" />
+                            <div class="text">
+                                <a href="mailto:tatu.laras@gmail.com"
+                                    >tatu.laras@gmail.com</a
+                                >
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/icons/write_card_phone.png" />
+                            <div class="text">
+                                <a href="phone:+358451787499"
+                                    >+358 45 1787499</a
+                                >
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/icons/url1-0.png" />
+                            <div class="text">
+                                <a href="http://www.linkedin.com/in/tatularas"
+                                    >LinkedIn</a
+                                >
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <img draggable="false" src="res/img/icons/url1-0.png" />
+                            <div class="text">
+                                <a href="https://github.com/TatuLaras/"
+                                    >Github</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bonzi">
+                    <div class="bonzi-image"></div>
+                </div>
+            </div>
         </div>
-        <script type="module" src="res/src/main.js"></script>
+        <script src="res/src/main.js"></script>
     </body>
 </html>

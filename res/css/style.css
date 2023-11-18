@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+:root {
+    --pink: #e6acb9;
+    --pink2: #e972c5;
+    --windows-blue: #0608c1;
+    --dark: #14124a;
+    --neutral-grey: #f3f3f3;
+}
+
+@font-face {
+    font-family: windows;
+    src: url('../font/Windows\ Regular.ttf');
+}
+
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--pink2);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#screenspace {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    perspective-origin: 50% 50%;
+    perspective: 1000px;
+    z-index: 3;
+    border: none;
+    pointer-events: none;
+
+}
+
+#wrapper {
+    position: relative;
+}
+
+#wrapper .bg {
+    filter: contrast(180%);
+    background: linear-gradient(
+            10deg,
+            rgba(0, 0, 0, 0),
+            var(--dark),
+            var(--dark),
+            rgba(0, 0, 0, 0)
+        ),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.border,
+.window,
+.window button,
+.taskmanager .item {
+    border: 2px outset #EEEEEE;
+    box-shadow: 1px 1px 0px 2px black;
+    color: black;
+    text-decoration: none;
+}
+
+
+.hide {
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 70px;
+    color: #f269ed;
+    text-shadow: 5px 5px 0px white;
+}
+
+.window * {
+    font-family: windows, Arial, Helvetica, sans-serif;
+}
+
+.window {
+    width: 300px;
+    margin: 1em;
+    user-select: none;
+}
+
+.window .body {
+    background-color: var(--neutral-grey);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.window .header {
+    background: linear-gradient(90deg, #000d63 0%, #007af9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2em 0.4em 0.1em 0.4em;
+}
+
+.window .start {
+    display: flex;
+    align-items: center;
+}
+
+.window .icon {
+    margin-right: 0.5em;
+}
+
+.window .title {
+    color: white;
+    font-weight: bold;
+}
+
+.window .header .button {
+    background-color: var(--neutral-grey);
+    border: 2px outset;
+    text-align: center;
+    padding: 0em 0.25em;
+    font-weight: bold;
+}
+
+#main-lander {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    min-height: 100vh;
+}
+
+.info1 {
+    position: relative;
+    top: -5em;
+    width: 450px;
+    z-index: 0;
+}
+
+.globe {
+    z-index: 2;
+    position: relative;
+}
+
+.info2 {
+    width: 200px;
+    position: relative;
+    left: -5em;
+}
+
+.window.disabled .header {
+    background: linear-gradient(90deg, #767577 0%, var(--neutral-grey) 100%);
+}
+
+.window.disabled .title {
+    color: var(--neutral-grey);
+}
+
+.window button {
+    align-self: flex-end;
+    margin-top: 1em;
+}
+
+.window button:hover {
+    cursor: pointer;
+}
+
+@keyframes popout {
+    from {
+        bottom: calc(-1 * (var(--taskbar-height) + 0.3em));
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+#taskbar {
+    --taskbar-height: 2.1em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--taskbar-height);
+    background-color: #dcdcdc;
+    border-top: 3px outset;
+    box-shadow: 0 -2px 0 black;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding-top: 0.1em;
+    padding-bottom: 0.2em;
+    pointer-events: all;
+
+}
+
+#taskbar * {
+    font-family: windows, Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+#taskbar.popout {
+    animation: popout 0.1s ease-in;
+}
+
+#start-button,
+.taskmanager .item {
+    display: flex;
+    align-items: center;
+    padding: 0 0.4em;
+    margin: 0.2em;
+    cursor: pointer;
+}
+
+#start-button .icon,
+.taskmanager .item .icon {
+    height: 1.5em;
+    margin-right: 0.3em;
+}
+
+#start-button .text,
+.taskmanager .item .text {
+    padding-top: 0.2em;
+}
+
+#start-button .text,
+.taskmanager .item.selected {
+    font-weight: bold;
+}
+
+.divider {
+    width: 6em;
+    margin: 0 0.2rem;
+}
+
+.section {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.section .start-border {
+    border-left: 1px inset;
+    border-right: 1px inset;
+}
+
+.section .dimple {
+    height: 65%;
+    align-self: center;
+    border: 2px outset;
+    margin: 0.1em;
+}
+
+.taskmanager {
+    flex: 1;
+}
+
+.system-drawer {
+    margin-right: 0.2em;
+}
+
+.system-drawer .drawer {
+    border: 3px inset;
+    box-shadow: 1px 1px 0px 1px black inset;
+    margin: 0 0.1em;
+    padding: 0.2em;
+    padding-top: 0.3em;
+    display: flex;
+    align-items: stretch;
+}
+
+.system-drawer .drawer > * {
+    margin: 0 0.2em;
+}
+
+#time {
+    text-align: center;
+}
+
+.taskmanager .items {
+    display: flex;
+}
+
+.taskmanager .item.selected,
+#start-button:active {
+    border: 3px inset;
+    box-shadow: 1px 1px 0px 1px black inset;
+    height: calc(100% - 0.4em);
+    position: relative;
+    top: -1px;
+}
+
+@keyframes intoPosition {
+    0% {
+        top: -100vh;
+        left: 50%;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    60% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+
+@keyframes flip {
+    50% 
+    {
+        top: 20%;
+        transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+
+#floating-window {
+    position: fixed;
+    z-index: 3;
+    width: 400px;
+    top: -100vh;
+    left: 50%;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+
+#floating-window.p1 {
+    top: 30%;
+    left: 10%;
+    transform: rotateX(10deg) rotateY(30deg) rotateZ(-10deg);
+}
+
+#floating-window.p2 {
+    top: 30%;
+    transform: rotateX(10deg) rotateY(-30deg) rotateZ(10deg);
+    left: 50%;
+}
+
+
+.flip {
+    animation: flip 0.5s ease-in-out;
+}
+
+.part {
+    width: 100%;
+}
+
+.part1 {
+    margin-top: 90vh;
+}
+
+.part, .row {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.larger {
+    flex: 2;
+}
+
+.smaller {
+    flex: 1;
+}
+
+.smaller .wordart {
+    width: 100%;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    margin-left: 3em;
+}
+
+.list-item .text,
+.list-item .content {
+    margin-left: 2em;
+    font-size: 20px;
+}
+
+.part2 {
+    margin-top: 50vh;
+}
+
+.job * {
+    font-size: 16px;
+}
+
+.job .title * {
+    font-size: 20px;
+}
+
+.job .title {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.job .title .position,
+.job .time-period {
+    opacity: 0.6;
+}
+
+.job .short-desc {
+    margin-top: 1em;
+}
+
+.job {
+    margin-top: 3em;
+}
+
+.part3, .part4 {
+    margin-top: 80vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.part3 .smaller, .part4 .smaller  {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+.app-preview {
+    z-index: 6;
+    position: relative;
+    right: -100%;
+    filter: none;
+    width: 20em;
+    margin-right: 8em;
+    transition: all 0.5s ease-in-out;
+    transform: rotateX(10deg) rotateY(20deg) rotateZ(0deg);
+}
+
+.part.current .app-preview {
+    right: 0;
+    transform: rotateX(10deg) rotateY(-20deg) rotateZ(0deg);
+}
+
+.row {
+    width: 100%;
+}
+
+.part3 *, .part4 * {
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.part3 ul, .part4 ul {
+    font-size: 30px;
+}
+
+.explanation-content {
+    position: relative;
+    left: -10em;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    margin-top: 4em;
+    margin-left: 4em;
+}
+
+.part.current .explanation-content {
+    opacity: 1;
+    left: 0;
+}
+
+.recommendation {
+    font-size: 24px;
+}
+
+.part4 {
+    margin-top: 40vh;
+}
+
+.part5 {
+    margin-top: 100vh;
+    padding-bottom: 30em;
+}
+
+.part3 a, .part4 a {
+    color: white;
+}
+
+
+
+
+.bonzi {
+    position: absolute;
+    right: 40px;
+    bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bonzi-image {
+    width: 200px;
+    height: 160px;
+    background-image: url('../img/bonzi/bonzi_glasses.gif');
+}
